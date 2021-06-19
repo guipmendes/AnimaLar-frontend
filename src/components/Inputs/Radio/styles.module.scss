@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  margin-top: 1.6rem;
+
+  .radioContainer {
+    display: flex;
+
+    align-items: center;
+
+    input {
+      margin-right: 1.1rem;
+    }
+
+    label {
+      font-size: 1.2rem;
+      line-height: 1.3rem;
+
+      color: var(--gray);
+
+      display: block;
+
+      margin-right: 1.7rem;
+    }
+  }
+
+  small {
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+
+    color: var(--red);
+  }
+}
