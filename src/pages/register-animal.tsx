@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 
 import { useYupValidationResolver } from "@/src/hooks/useYupValidationResolver";
 import { InputDefault } from "@/src/components/Inputs/Default";
+import { TextArea } from "@/src/components/Inputs/TextArea";
 import { ButtonDefault } from "@/src/components/Buttons/Default";
 import { registerAnimalValidator } from "@/src/validators/registerAnimal";
 
@@ -68,6 +69,12 @@ const RegisterAnimal = () => {
           </div>
         </fieldset>
         <fieldset>
+          <TextArea
+            label="Cuidados"
+            name="care"
+            error={errors.care?.message}
+            register={register}
+          />
           <InputDefault
             label="Periodo de adoção"
             name="period"
