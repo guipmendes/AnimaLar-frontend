@@ -5,6 +5,7 @@ import { DefaultInput } from "..";
 describe("DefaultInput component", () => {
   const props = {
     register: jest.fn(),
+    label: "Text",
     error: "",
   };
 

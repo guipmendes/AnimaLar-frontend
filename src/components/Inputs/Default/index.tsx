@@ -1,20 +1,24 @@
-import { InputHTMLAttributes, LegacyRef } from "react";
+import { InputHTMLAttributes } from "react";
+import { UseFormRegister } from "react-hook-form";
 
 import styles from "./styles.module.scss";
 
 interface DefaultInputProps extends InputHTMLAttributes<HTMLInputElement> {
-  register: LegacyRef<HTMLInputElement>;
   error?: string;
+  label: string;
+  register: UseFormRegister<any>;
 }
 
 export const DefaultInput = ({
-  register,
   error,
+  register,
+  label,
   ...rest
 }: DefaultInputProps): JSX.Element => {
   return (
     <div className={styles.container}>
-      <input type="text" ref={register} {...rest} />
+      <label htmlFor={rest.name}>{label}</label>
+      <input type="text" id={rest.name} {...register(rest.name)} {...rest} />
       {error && <small>{error}</small>}
     </div>
   );
