@@ -4,6 +4,7 @@ import { useYupValidationResolver } from "@/src/hooks/useYupValidationResolver";
 import { InputDefault } from "@/src/components/Inputs/Default";
 import { TextArea } from "@/src/components/Inputs/TextArea";
 import { ButtonDefault } from "@/src/components/Buttons/Default";
+import { Carousel } from "@/src/components/Carousel";
 import { registerAnimalValidator } from "@/src/validators/registerAnimal";
 
 import styles from "@/src/styles/registerAnimal.module.scss";
@@ -29,63 +30,67 @@ const RegisterAnimal = () => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <main className={styles.container}>
-      <h1>Cadastro de novos pets</h1>
+    <>
+      <main className={styles.container}>
+        <h1>Cadastro de novos pets</h1>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <fieldset>
-          <InputDefault
-            label="Nome"
-            name="name"
-            error={errors.name?.message}
-            register={register}
-          />
-          <InputDefault
-            label="Espécie"
-            name="species"
-            error={errors.species?.message}
-            register={register}
-          />
-          <InputDefault
-            label="Raça"
-            name="breed"
-            error={errors.breed?.message}
-            register={register}
-          />
-
-          <div className={styles.row}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <fieldset>
             <InputDefault
-              label="Cidade"
-              name="city"
-              error={errors.city?.message}
+              label="Nome"
+              name="name"
+              error={errors.name?.message}
               register={register}
             />
             <InputDefault
-              label="Estado"
-              name="state"
-              error={errors.state?.message}
+              label="Espécie"
+              name="species"
+              error={errors.species?.message}
               register={register}
             />
-          </div>
-        </fieldset>
-        <fieldset>
-          <TextArea
-            label="Cuidados"
-            name="care"
-            error={errors.care?.message}
-            register={register}
-          />
-          <InputDefault
-            label="Periodo de adoção"
-            name="period"
-            error={errors.period?.message}
-            register={register}
-          />
+            <InputDefault
+              label="Raça"
+              name="breed"
+              error={errors.breed?.message}
+              register={register}
+            />
 
-          <ButtonDefault type="submit">Criar</ButtonDefault>
-        </fieldset>
-      </form>
-    </main>
+            <div className={styles.row}>
+              <InputDefault
+                label="Cidade"
+                name="city"
+                error={errors.city?.message}
+                register={register}
+              />
+              <InputDefault
+                label="Estado"
+                name="state"
+                error={errors.state?.message}
+                register={register}
+              />
+            </div>
+          </fieldset>
+          <fieldset>
+            <TextArea
+              label="Cuidados"
+              name="care"
+              error={errors.care?.message}
+              register={register}
+            />
+            <InputDefault
+              label="Periodo de adoção"
+              name="period"
+              error={errors.period?.message}
+              register={register}
+            />
+
+            <ButtonDefault type="submit">Criar</ButtonDefault>
+          </fieldset>
+        </form>
+      </main>
+
+      <Carousel />
+    </>
   );
 };
 
