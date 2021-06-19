@@ -12,6 +12,8 @@
   background-size: contain;
   background-color: var(--background);
 
+  padding: 0 1.6rem;
+
   .text {
     max-width: 39.5rem;
 
@@ -20,5 +22,11 @@
     font-size: 2.4rem;
     line-height: 3rem;
     text-align: center;
+
+    color: var(--color);
+  }
+
+  @media (max-width: 960px) {
+    display: none;
   }
 }
