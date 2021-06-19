@@ -5,18 +5,15 @@
 }
 
 :root {
-  // variables
-}
+  --background: #b4eaf7;
+  --color: #29798e;
 
-@media (max-width: 1080px) {
-  html {
-    font-size: 93.75%;
-  }
+  font-size: 60%;
 }
 
 @media (max-width: 720px) {
-  html {
-    font-size: 87.5%;
+  :root {
+    font-size: 53.5%;
   }
 }
 
@@ -30,7 +27,7 @@ input,
 textarea,
 select,
 button {
-  font: 400 1rem sans-serif;
+  font: 400 1rem "Comfortaa", sans-serif;
 }
 
 button {

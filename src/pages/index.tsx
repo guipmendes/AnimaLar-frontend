@@ -1,3 +1,9 @@
+import { Background } from "@/src/components/Background";
+
 export default function Home() {
-  return <h1>Hello, AnimaLar</h1>;
+  return (
+    <>
+      <Background />
+    </>
+  );
 }

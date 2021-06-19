@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 100vh;
+
+  background-image: url("../../../public/images/backdog.png");
+  background-repeat: repeat;
+  background-size: contain;
+  background-color: var(--background);
+
+  .text {
+    max-width: 39.5rem;
+
+    margin-top: 4.36rem;
+
+    font-size: 2.4rem;
+    line-height: 3rem;
+    text-align: center;
+  }
+}

@@ -1,4 +1,6 @@
 {
+  "preset": "ts-jest",
+  "testEnvironment": "node",
   "testMatch": ["<rootDir>/src/**/__tests__/**/*.spec.{ts,tsx}"],
   "clearMocks": true,
   "coverageDirectory": "coverage",
@@ -23,7 +25,10 @@
     "/node_modules/",
     "^.+\\.module\\.(css|sass|scss)$"
   ],
+  "setupFilesAfterEnv": ["<rootDir>/mocks/setupTests.js"],
   "moduleNameMapper": {
-    "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+    "\\.(jpg|jpeg|png|gif|css)$": "<rootDir>/mocks/fileMock.js",
+    "^.+\\.module\\.(css|sass|scss)$": "<rootDir>/node_modules/jest-css-modules",
+    "^@/(.*)": "<rootDir>/$1"
   }
 }
