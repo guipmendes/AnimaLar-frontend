@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 
-import { DefaultInput } from "..";
+import { InputDefault } from "..";
 
-describe("DefaultInput component", () => {
+describe("InputDefault component", () => {
   const props = {
     register: jest.fn(),
     label: "Text",
@@ -10,14 +10,14 @@ describe("DefaultInput component", () => {
   };
 
   it("should not be able without error", () => {
-    render(<DefaultInput {...props} />);
+    render(<InputDefault {...props} />);
 
     expect(screen.queryByText("has error")).toBeFalsy();
   });
 
   it("should be able with error", () => {
     props.error = "has error";
-    render(<DefaultInput {...props} />);
+    render(<InputDefault {...props} />);
 
     expect(screen.queryByText("has error")).toBeTruthy();
   });
